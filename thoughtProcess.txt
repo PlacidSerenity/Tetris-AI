@@ -1,0 +1,31 @@
+Early thought process:
+if: we have a gap
+[Currently undone]
+elif: we get an I piece and there exists one or columns that are 3 or more blocks lower than others, place the I in vertically.
+elif: we have two consecutive columns that are one or more columns lower than the others:
+    if: the two consecutive columns that are one or more lower than the right column, we can put the Z or J piece in vertically.
+    if: the two consecutive columns have the right column lower by one or more blocks than the left column, put the S or L piece vertically into the hole.
+if: we have a row or more that allows a piece to fit perfectly (and therefore cancel out):
+    - bypass reservation and put a piece there only if a piece can be out only there
+    else:
+        leave spot empty and create a reservation at that space such that when such piece arrives, the spot will be cleared and allowed for the piece.
+
+Unanswered questions:
+- In what scenarios are we allowed to put an I piece horizontally?
+- When a game starts with a S or Z piece, which pieces are best to slide into the gap?
+- Figure out how when and how we decide T spins?
+- Different modes (eg: clearing rows as fast as possible when the game speeds up or trying to clear 4 rows as much as possible)?
+
+Game conditions:
+At any point there must
+- a pair of consecutive columns with height difference 0.
+- a pair of consecutive columns with height difference 1.
+- only one column must with height difference larger or equal to 3 compared to its surrounding columns.
+
+Move cost considerations:
+- hole creation
+- block off a column (hole creation but a bit more specific)
+- rows cleared (clearing a single row when if another piece could clear more and lead to more points)
+- making higher height difference between columns (to be discussed)
+- not leaving space for O piece
+- making a smaller heigh different between columns (to be discussed)
