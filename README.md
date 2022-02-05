@@ -8,3 +8,5 @@ help me
 end my suffering
 
 end this pain
+
+end it all
